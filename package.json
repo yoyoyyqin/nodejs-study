@@ -1,0 +1,32 @@
+{
+  "name": "nodejs-study",
+  "version": "1.0.0",
+  "description": "study nodejs",
+  "scripts": {
+    "start": "npx del -rf target && mkdir target &&  npx babel src --out-dir target --copy-files && nodemon --inspect ./target/app.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoyoyyqin/nodejs-study.git"
+  },
+  "author": "yoyoyyqin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yoyoyyqin/nodejs-study/issues"
+  },
+  "homepage": "https://github.com/yoyoyyqin/nodejs-study#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-stage-2": "^7.0.0",
+    "del-cli": "^1.1.0",
+    "eslint": "^5.9.0",
+    "esm": "^3.0.84",
+    "lodash": "^4.17.11",
+    "nodemon": "^1.18.7",
+    "npx": "^10.2.0"
+  }
+}
