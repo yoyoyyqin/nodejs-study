@@ -2,9 +2,22 @@
   "name": "nodejs-study",
   "version": "1.0.0",
   "description": "study nodejs",
+  "main": "./target/app.js",
   "scripts": {
-    "start": "npx del -rf target && mkdir target &&  npx babel src --out-dir target --copy-files && nodemon --inspect ./target/app.js",
-    "test": "test"
+    "start": "npm run clean && npm run compile && nodemon ",
+    "test": "test",
+    "clean": " del -rf target && mkdir target",
+    "compile": " babel src --out-dir target --copy-files"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src",
+      "target"
+    ],
+    "inspect": "./target/app.js",
+    "execMap": {
+      "compile": "npm run compile"
+    }
   },
   "repository": {
     "type": "git",
@@ -16,7 +29,9 @@
     "url": "https://github.com/yoyoyyqin/nodejs-study/issues"
   },
   "homepage": "https://github.com/yoyoyyqin/nodejs-study#readme",
-  "dependencies": {},
+  "dependencies": {
+    "q": "^1.5.1"
+  },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",

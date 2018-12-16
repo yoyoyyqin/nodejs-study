@@ -1,8 +1,10 @@
-import Product from './models/Product';
-import User from './models/User';
+import Dirwatcher from './models/dirwatcher';
+import Importer from './models/importer';
 
-const env =require('./config/env.json');
+const env = require('./config/env.json');
 console.log(env.name);
 
-let user = new User();
-let product = new Product();
+let dirWatcher = new Dirwatcher();
+let importer = new Importer(dirWatcher);
+
+dirWatcher.watch("./data/", 200);
